@@ -1,4 +1,4 @@
-body {
+#main {
     display: flex;
     background-color: whitesmoke!important;
     padding: 50px;
@@ -7,8 +7,8 @@ body {
 
 #container {
     background-color: white;
-    width: 600px;
-    height: 600px;
+    width: 550px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     box-shadow: 2px 2px 5px #888888;
@@ -61,6 +61,7 @@ input[type = color] {
     width: 50px;
     height: 50px;
     border: none;
+    align-self: center;
 } 
 
 .invisible {
@@ -75,4 +76,24 @@ input[type = color] {
 
 #range {
     align-self: center;
+}
+
+.footer {
+    display: flex;
+    background-color: #1F2937;
+    height: 100px;
+    color: #E5E7EB;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #1F2937;
+    /* height: 100px; */
+    color: #E5E7EB;
+    align-items: center;
+    justify-content: center;
 }

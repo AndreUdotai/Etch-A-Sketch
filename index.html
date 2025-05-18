@@ -1,71 +1,65 @@
 <!doctype html>
 <html lang="en">
-    <head>
 
-        <!-- <script src="https://use.fontawesome.com/64b8cce70b.js"></script> -->
+<head>
 
-        <!-- GENERAL INFO -->
-        <title>Etch A Sketch</title>
-        <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Choose pixels and colors to make a sketch!">
+    <!-- <script src="https://use.fontawesome.com/64b8cce70b.js"></script> -->
 
-        <!-- Change the mobile browser's viewport width -->
-        <meta name="viewport" content="width=320" />
-        
-        <!-- Sets the viewport to the same width as the screen to obtain readable render without zooming-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
-        <!-- LINKS TO CSS FILE ("STYLESHEET") AND SITE ICON -->
-        <link href="styles.css" type="text/css" rel="stylesheet">
+    <!-- GENERAL INFO -->
+    <title>Etch A Sketch</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Choose pixels and colors to make a sketch!">
 
-        <!-- LINK TO FONT AWESOME -->
-        <link rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-            crossorigin="anonymous">
+    <!-- Change the mobile browser's viewport width -->
+    <meta name="viewport" content="width=320" />
 
-        <!-- LINK TO BOOTSTRAP -->
-        <link rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"/>
-    </head>
-    <body>
+    <!-- Sets the viewport to the same width as the screen to obtain readable render without zooming-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- LINKS TO CSS FILE ("STYLESHEET") AND SITE ICON -->
+    <link href="styles.css" type="text/css" rel="stylesheet">
+
+    <!-- LINK TO FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- LINK TO BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
     <div id="app">
-
         <div class="header">
             <h1>ETCH-A-SKETCH</h1>
-            <p>Start a sketch on the canvass by selecting your color mode. <br>
-                Use the range to adjust the sketch grid size. <br>
-                Also try to rainbow mode for a color splash! <br>
-                (This app is not optimized for mobile devices.)
-            </p>
         </div>
-
 
         <div id="main">
             <div id="sideBar">
                 <div id="range">
+                    <p>Choose the number of squares:</p>
                     <div id="squareNum">16 x 16</div>
                     <input type="range" id="rangeNum" name="" min="1" max="64" value="16" step="1">
                 </div>
-                <button id="clear">Clear</button>
-                <button id="eraser">Eraser</button>
                 <button id="color">Colour mode</button>
                 <input type="color" id="colorPalette" class="invisible" name="colorPalette">
                 <button id="rainbow">Rainbow mode</button>
+                <button id="eraser">Eraser</button>
+                <button id="clear">Clear</button>
             </div>
             <div id="container"></div>
         </div>
 
 
         <div class="footer">
-            Copyright © 2021 Andre Udotai
+            Copyright © <a href="https://github.com/AndreUdotai/landing-page" target="_blank"
+                rel="noopener noreferrer">Andre Udotai</a> 2025
         </div>
 
     </div>
 
-        <script src="main.js"></script>
-    </body>
+    <script src="main.js"></script>
+</body>
+
 </html>

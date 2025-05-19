@@ -1,4 +1,4 @@
-let container           = document.querySelector('#container');
+let sketchBoard         = document.querySelector('#sketchBoard');
 let rows                = document.getElementsByClassName('row');
 let cells               = document.getElementsByClassName('cell');
 let clearButton         = document.getElementById('clear');
@@ -22,7 +22,7 @@ let createGrid = (row, col) => {
 let makeRows = (rowNum) => {
     for(let r = 0; r < rowNum; r++){
         let row = document.createElement("div");
-        container.appendChild(row).className = "row";
+        sketchBoard.appendChild(row).className = "row";
     }
 }
 
@@ -36,7 +36,7 @@ let makeColumns = (cellNum) => {
 }
 
 let clearGrid = () => {
-    container.innerHTML = '';
+    sketchBoard.innerHTML = '';
 }
 
 // createGrid(rangeNum.value, rangeNum.value)
@@ -56,7 +56,7 @@ colorModeButton.addEventListener('click', () => {
     rainbowModeButton.classList.remove('buttonActive');
     colorModeButton.classList.add('buttonActive');
     colorPalette.classList.remove('invisible');
-    container.addEventListener('mouseover', (e) => {
+    sketchBoard.addEventListener('mouseover', (e) => {
         e.target.style.backgroundColor = colorPalette.value;
     }) 
 })
@@ -72,7 +72,7 @@ eraserButton.addEventListener('click', () => {
     rainbowModeButton.classList.remove('buttonActive');
     colorModeButton.classList.remove('buttonActive');
     colorPalette.classList.add('invisible')
-    container.addEventListener('mouseover', (e) => {
+    sketchBoard.addEventListener('mouseover', (e) => {
         e.target.style.backgroundColor = 'white';
     })
 })
@@ -82,7 +82,7 @@ rainbowModeButton.addEventListener('click', () => {
     rainbowModeButton.classList.add('buttonActive');
     colorModeButton.classList.remove('buttonActive');
     colorPalette.classList.add('invisible')
-    container.addEventListener('mouseover', (e) => {
+    sketchBoard.addEventListener('mouseover', (e) => {
         e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256 + 1)}, ${Math.floor(Math.random() * 256 + 1)}, ${Math.floor(Math.random() * 256 + 1)})`;
     })
 })

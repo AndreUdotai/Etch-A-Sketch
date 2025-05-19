@@ -1,26 +1,21 @@
-* {
-    border: 1px solid red;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
 }
 
 body {
     font-family: 'Press Start 2P', 'Arial', 'Helvetica', 'Verdana', sans-serif;
-    color: white;
-    /* background-color: red; */
 }
 
-#app {
-    display: flex;
+#container {
+    display: flex;  
     flex-direction: column;
     height: 100vh;
-
-}
-
-.header {
-    text-align: center;
-    background-color: #1F2937;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    color: white;
+    width: 100%;
+    
 }
 
 #main {
@@ -29,16 +24,18 @@ body {
     background-color: whitesmoke!important;
     padding: 50px;
     justify-content: space-around;
-    gap: 20px;
+    align-items: center;
+    /* gap: 20px; */
+    flex: 1;
 }
 
-#container {
+#sketchBoard {
     background-color: white;
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 2px 5px #888888;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -50,7 +47,6 @@ body {
 }
 
 .cell {
-    /* border: 1px solid rgb(165, 53, 53); */
     flex: 1 1 auto;
     width: 5px;
     height: 100%;
@@ -58,36 +54,45 @@ body {
 
 button {
     color: white;
-    background-color: rgb(89, 137, 250);
-    padding: 8px 32px;
-    font-size: 16px;
-    border-radius: 5px!important;
+    background-color: rgb(10, 97, 254);
+    padding: 6px 20px;
+    border-radius: 0.25rem!important;
     border: none;
-    box-shadow: 5px 5px 2px #888888;
-    width: 180px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
+.buttonActive {
+    background-color: rgb(18, 85, 240);
+    transform: scale(1.05); /* Slight scale for active state */
+}
+
+button {
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
 button:hover {
-    box-shadow: 4px 4px 2px #acaaaa;
+    transform: translateY(-2px); /* Slight lift effect */
     background-color: rgb(64, 115, 235);
-}
-
-button:active {
-    border: none;
 }
 
 #sideBar {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
+    /* width: 180px; */
+    flex: 0 1 160px;
+    gap: 2px;
 }
 
+#sideBar > * { /* Targets all direct children (div, button, input) */
+    flex: 0 0 auto; /* Allows growth but sets a base size */
+    min-width: 120px; /* Minimum width to control wrapping */
+    margin: 1px; /* Adds spacing between items */
+}
 
 input[type = color] {
     width: 50px;
     height: 50px;
-    border: none;
     align-self: center;
 } 
 
@@ -95,28 +100,53 @@ input[type = color] {
     display: none;
 }
 
-.buttonActive {
-    background-color: rgb(18, 85, 240);
-    box-shadow: 4px 4px 2px #acaaaa;
-
-}
-
 #range {
     align-self: center;
 }
 
-.footer {
-    text-align: center;
+#range > p {
+    margin-bottom: 0;
+}
+
+.header, .footer {
+    color: white;
     background-color: #1F2937;
-    font-size: 14px;
+    text-align: center;
     padding-top: 18px;
     padding-bottom: 18px;
-    color: white;
 }
+
+.footer {
+    font-size: 14px;
+} 
 
 .footer a {
     margin-left: 5px;
     margin-right: 5px;
 }
 
+@media screen and (max-width: 675px) {
+ 
+    #sideBar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 100%; /* Ensures it doesn’t exceed viewport width */
+        padding: 10px; /* Optional: Adds breathing room */
+    }
 
+    #sideBar > * { /* Targets all direct children (div, button, input) */
+        flex: 1 0 auto; /* Allows growth but sets a base size */
+        min-width: 120px; /* Minimum width to control wrapping */
+        margin: 5px; /* Adds spacing between items */
+    }
+
+    #colorPalette {
+        min-width: 60px; /* Adjust for color input size */
+    }
+
+    #sketchBoard {
+        width: 90%; /* Adjusts to a percentage of the viewport width */
+        aspect-ratio: 1 / 1; /* Keeps it square */
+    }
+}
